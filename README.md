@@ -6,6 +6,7 @@ Folder structure created will follow this pattern : `context/namespace/resource_
 The kubectl context is the only argument to the script.  
 The script will download all the objects in parallel, using one thread per CPU core available, in order to optimise the download speed.  
 Kubernetes events won't be downloaded, and some parts of the YAML which is changing at each export will also be stripped out. This can be configured on line 23.  
+Secrets will also be decoded, with the suffix `_decoded.yaml`  
 You can use this script for example as part of a scheduled task which will commit to git the current state of your cluster, to be able to see what is being modified every day.  
 
 ## Setup
